@@ -1,0 +1,60 @@
+<style>
+  .theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.3rem;
+    padding: 0.3rem;
+    margin-left: 1rem;
+  }
+</style>
+
+<button id="theme-toggle" class="theme-toggle d-none" aria-label="Toggle theme">
+  <span class="theme-icon">🌞</span>
+</button>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("theme-toggle");
+
+    /* Detect system theme */
+    function getSystemTheme() {
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) return "dark";
+      if (window.matchMedia("(prefers-color-scheme: light)").matches) return "light";
+      return "light";
+    }
+
+    /* Load saved theme or fall back to system */
+    const saved = localStorage.getItem("theme") || "auto";
+    let theme = saved === "auto" ? getSystemTheme() : saved;
+    /*document.documentElement.setAttribute("data-theme", theme);*/
+    jtd.setTheme(theme);
+    /* change icon to reflect current theme */
+    document.querySelector(".theme-icon").textContent = theme === "light" ? "🌙" : "🌞";
+
+    /* Toggle through: light → dark */
+    toggle.addEventListener("click", () => {
+      const current = localStorage.getItem("theme") || "auto";
+      let theme = current === "auto" ? getSystemTheme() : current;
+      let next = current === "light" ? "dark" : "light";
+      /*document.documentElement.setAttribute("data-theme", next);*/
+      jtd.setTheme(next);
+      localStorage.setItem("theme", next);
+      /* change icon to reflect current theme */
+      document.querySelector(".theme-icon").textContent = next === "light" ? "🌙" : "🌞";
+    });
+
+    /* Live update if system theme changes */
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", e => {
+      const saved = localStorage.getItem("theme") || "auto";
+      if (saved === "auto") {
+        var theme = e.matches ? "dark" : "light";
+        /*document.documentElement.setAttribute("data-theme", theme);*/
+        jtd.setTheme(e.matches ? "dark" : "light");
+        /* change icon to reflect current theme */
+        document.querySelector(".theme-icon").textContent = e.matches ? "🌙" : "🌞";
+      }
+    });
+  });
+</script>

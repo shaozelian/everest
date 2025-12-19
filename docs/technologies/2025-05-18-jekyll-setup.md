@@ -1,0 +1,176 @@
+---
+layout: post
+title: Jekyll/GitHub Pages Set-up
+author: Shao Zelian
+date: 2025-05-18
+parent: Jekyll Series
+nav_order: 1
+tags: [jekyll, blog]
+has_toc: true
+---
+
+Github Pages can provide free static web pages hosting. Jekyll is a popular static site generator that integrates seamlessly with GitHub Pages. Here's how you can set up and use Jekyll with GitHub Pages...
+{: .fs-6 .fw-300 }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{: toc}
+
+---
+
+## Part 1 - Quick start of creating personal site
+
+### Create Github repository.
+
+- Login <a href="https://www.github.com">github.com</a> and create a repository with the following settings.<br/>
+<div class="language-plaintext highlighter-rouge">
+	<div class="highlight">
+		<pre class="highlight"><code>Repository Name: {Owner} / <span class="si">{<span class="s2">username</span>}.github.io</span><br/>Public or private: <span class="si">Public</span><br/>Add a README file: <span class="si">Checked</span><br/>Add .gitignore template: <span class="si">Jekyll</span></code></pre>
+	</div>
+</div>
+
+### Enable Github Pages by settings.
+
+- Open the created repository. <br/>
+- Click tab "Settings" > menu item "Pages".
+<div class="language-plaintext highlighter-rouge">
+	<div class="highlight">
+		<pre class="highlight"><code>Source: <span class="si">Deply from a branch</span><br/>Branch: <span class="si">Main / (root)</span><br/></code></pre>
+	</div>
+</div>
+
+### Apply Jekyll theme. (optional)
+
+The step is optional. If you want to see how it is easy to quickly enable Jekyll theme, following the steps below. <br>
+
+- Create a "\_config.yml" file in the root folder of the repository.
+- Copy the code into the file and save it. <br/>
+<div class="language-ruby highlighter-rouge">
+	<div class="highlight">
+		<pre class="highlight"><code><span class="c1"># _config.yml file.</span><br/>remote_theme: pages-themes/hacker@v0.2.0<br/>plugins:<br/>- jekyll-remote-theme<br/><br/>title: my site title<br/>description: my site description.</code></pre>
+	</div>
+</div>
+- Click tab "Actions" > "All workflows". One or two workflow is created automatically because of code repository changes detected by <a href="https://docs.github.com/en/actions">Github Actions</a>.
+- If the latest workflow runs as below, the deployment of your site is completed successfully. <br/>
+  <img src='/assets/images/blog/2025-05-18-jekyll-01.png' style="max-width:600px" alt='Workflow'/>
+
+### Visit personal site.
+
+Open <a href="javascript:void(0);">https://{username}.github.io</a>.
+
+## Part 2 - Set up local development and CI/CD environment.
+
+In the real world, we normally need a local development environment which allows us to code, local debugging and testing. It doesn't need deploy uncompleted work to remote website every time. <br/>
+In this section, we will lead you step by step for how to set the local development using Microsoft Visual Studio within Windows system.
+
+### Install Ruby on Windows
+
+- Download latest Ruby+DevKit package (my version is Ruby+Devkit 3.4.4-2 (x64)) from the site <a href="https://rubyinstaller.org/downloads/">https://rubyinstaller.org/downloads/</a>.
+- Run installer and select all components.<br/>
+  <img src='/assets/images/blog/2025-05-18-jekyll-02.png' style="max-width:600px" alt='Ruby installation'/>
+- At the last stage of installation, following the instructions to continue the installation in the pop-up command window.
+- Open a new command window, enter "ruby -v" and "gem -v" to verify.
+- Installed ruby and gem versions will look like below if all is installed successfully. <br/>
+  <img src='/assets/images/blog/2025-05-18-jekyll-03.png' style="max-width:600px" alt='Verify'/>
+
+### Install Jekyll
+
+- Open a new command window. Run "gem install jekyll bundler".
+- Verify after installation completed by command "jekyll -v".<br/>
+  <img src='/assets/images/blog/2025-05-18-jekyll-04.png' style="max-width:500px" alt='Verify'/>
+
+### Configure Jekyll Theme
+
+- Go to local project root folder, for example "xxx.github.io".
+- Assume the "\_config.yml" file is configured as below (following part 1 step 3).
+<div class="language-ruby highlighter-rouge">
+	<div class="highlight">
+		<pre class="highlight"><code><span class="c1"># _config.yml file.</span><br/>remote_theme: pages-themes/hacker@v0.2.0<br/>plugins:<br/>- jekyll-remote-theme<br/><br/>title: my site title<br/>description: my site description.</code></pre>
+	</div>
+</div>
+- Open a new command window. Navigate to root folder.
+- Run "bundle init" command. "Gemfile" will be generated if it isn't there.
+- Open "Gemfile". Add the following 3 lines and save it.
+<div class="language-ruby highlighter-rouge">
+	<div class="highlight">
+		<pre class="highlight"><code><span class="c1"># Gemfile</span><br/>gem "jekyll"<br/>gem "jekyll-seo-tag"<br/>gem "jekyll-remote-theme"<br/></code></pre>
+	</div>
+</div>
+- In the same command window, run "bundle install".
+- Listed packages in Gemfile will be installed.
+
+<i class="fa-solid fa-circle-exclamation"></i>&nbsp;Important tips:
+
+- If there is any error for missing packages, put "gem {pakcage name}" in Gemfile and run "bundle install" again.
+- For some region (like China), the default Ruby source site "https://rubygems.org" might not be accessible or instable. You need config an accessible mirror source site before run "bundle install". <br/>For exmple: in the same command window, run the command.
+<div class="language-ruby highlighter-rouge">
+	<div class="highlight">
+		<pre class="highlight"><code><span class="c1"># Change mirror Ruby source site.</span><br/>C:\Users>bundle config mirror.https://rubygems.org https://gems.ruby-china.com</code></pre>
+	</div>
+</div>
+
+### Build and run local site
+
+- Keep at the root folder in command window.
+- Run "jekyll build" to complie the site.
+- Run "jekyll server" to run the site.
+- Open browser to visit the local site (default: "http://localhost:4000").
+
+### <i class="fa-solid fa-circle-question"></i>&nbsp;Q&A of common problems and errors
+
+- <i class="fa-solid fa-circle-xmark"></i>&nbsp;Error: Liquid Exception: invalid byte sequence in UTF-8...<br/>
+  <i class="fa-solid fa-right-long"></i>&nbsp;If UTF-8 is asked, source files must use UTF-8 encoding. To make it corrected, <br/>
+  In "Notepad", "Save As" and select encoding as "UTF-8".<br/>
+  <img src='/assets/images/blog/2025-05-18-jekyll-05.png' style="max-width:600px" alt='Notepad Save As'/>
+  In "Visual Studio", change default environment setting by "Tools" > "Options" > "Environment" > "Documents".<br/>
+  <img src='/assets/images/blog/2025-05-18-jekyll-06.png' style="max-width:600px" alt='Visual Studio Setting'/>
+- <i class="fa-solid fa-circle-xmark"></i>&nbsp;Error: When run "jekyll build", sometimes it says version incompatiblility error. <br/>
+  <i class="fa-solid fa-right-long"></i>&nbsp;Run "bundle clean --force". Then reinstall by "bundle install" command.
+- <i class="fa fa-info"></i>&nbsp;Tip: Change configured mirror Ruby source site. <br/>
+  <i class="fa-solid fa-right-long"></i>&nbsp;Run command line.<br/>
+  <div class="language-ruby highlighter-rouge">
+  <div class="highlight">
+  <pre class="highlight"><code><span class="c1"># Change mirror Ruby source site.</span><br/>C:\Users>bundle config mirror.https://rubygems.org https://gems.ruby-china.com</code></pre>
+  </div>
+  </div>
+- <i class="fa-solid fa-circle-xmark"></i>&nbsp;Error: You have already activated jekyll-sass-converter 3.1.0, but your Gemfile requires jekyll-sass-converter 3.0.0. Prepending `bundle exec` to your command may solve this. (Gem::LoadError). <br/>
+  <i class="fa-solid fa-right-long"></i>&nbsp;After all methods tried, there is still error. Prepending "bundle exec" to the command. For example, use "bundle exec jekyll serve" to start the jekyll web service.
+  <div class="language-ruby highlighter-rouge">
+  <div class="highlight">
+  <pre class="highlight"><code><span class="c1"># Add "bundle exec" befor command.</span><br/>C:\Users>bundle exec jekyll serve</code></pre>
+  </div>
+  </div>
+- <i class="fa-solid fa-circle-xmark"></i>&nbsp;Error: certificate verify failed (unable to get certificate CRL) (OpenSSL::SSL::SSLError) (Gem::LoadError). (Oct-25, error in my MacOS)<br/>
+  <i class="fa-solid fa-right-long"></i>&nbsp;Install openssl by command "gem install openssl", then update project "Gemfile" with "gem "openssl"".
+  <div class="language-ruby highlighter-rouge">
+  <div class="highlight">
+  <pre class="highlight"><code><span class="c1"># Install openssl.</span><br/>C:\Users>gem install openssl</code></pre>
+  </div>
+  </div>
+  <div>
+  <div class="language-ruby highlighter-rouge">
+  <div class="highlight">
+  <pre class="highlight"><code><span class="c1"># Add openssl into project Gemfile</span><br/>...<br/>gem "openssl"<br/>...</code></pre>
+  </div>
+  </div>
+- <i class="fa-solid fa-circle-xmark"></i>&nbsp;Error: ERROR: SSL verification error at depth 1: unable to get local issuer certificate (20) ERROR: You must add /C=US/O=Internet Security Research Group/CN=ISRG Root X1 to your local trusted store<br/>
+  <i class="fa-solid fa-right-long"></i>&nbsp;<br/>
+
+  - Download the cacert.pem file from [SRG Root X1 certificate](https://curl.se/docs/caextract.html).
+  - Save it to a local foder. For example: C:\Ruby34-x64\ssl\cacert.pem
+  - Manually set up the system environment variable set SSL_CERT_FILE to the file location.
+
+  ```command
+  set SSL_CERT_FILE=C:\Ruby34-x64\ssl\cacert.pem
+  ```
+
+  - Run "gem update --system"
+  - Run "ridk install"
+
+References:
+
+- [https://docs.github.com/en/pages](https://docs.github.com/en/pages)
+- [https://jekyllrb.com/docs](https://jekyllrb.com/docs)
+- [https://pages.github.com/themes](https://pages.github.com/themes)

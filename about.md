@@ -1,11 +1,11 @@
 ---
 layout: default
-title: 🏠 Home
-nav_order: 1
+title: ℹ️ About
+nav_order: 99
 ---
 
 # {{ page.title }}
 {: .non_toc}
 
-Homepage
+About the site.
 {: .fs-6 .fw-300 }
