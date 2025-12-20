@@ -1,0 +1,1 @@
+this.use(lunr.zh);

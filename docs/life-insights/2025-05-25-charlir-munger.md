@@ -26,5 +26,6 @@ I'm never surprised by humanity.
 我永远不会因为人性而感到意外。
 
 -- Charlie Thomas Munger (1924 - 2023).
+.
 
 -- 查理·湯姆斯·芒格
