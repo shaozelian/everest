@@ -4,10 +4,11 @@ title: "[CSS] Hover Cards"
 author: Shao Zelian
 date: 2025-10-16
 parent: 💻 Technologies
-tags: css
-excerpt: To make beautiful cards with HTML and CSS.
+tags: [css]
 ---
 
+To make beautiful cards with HTML and CSS.
+{: .fs-6 .fw-300 }
 ---
 
 <style>

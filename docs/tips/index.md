@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 🌿 Life Insights
+title: 💡 Tips
 author: Shao Zelian
-nav_order: 4
+nav_order: 6
 ---

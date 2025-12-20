@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Never feel self-pity
+title: Never Feel Self-pity
 author: Shao Zelian
 date: 2025-05-25
-parent: 🌿 Life Insights
+parent: 🌿 Brilliant Writtings
 tags: [Proverbs]
 has_toc: true
 ---
