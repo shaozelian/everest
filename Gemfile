@@ -9,4 +9,5 @@ gem "jekyll-remote-theme"
 gem "jekyll-sitemap"
 gem "just-the-docs"        # always download the latest release
 gem "jekyll-last-modified-at"
+gem "jekyll-sass-converter", "~> 3.1"
 # gem "jekyll-feed"
