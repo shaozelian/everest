@@ -1,0 +1,18 @@
+site-footer {
+    display: none !important;
+}
+
+.homepage-hero {
+    display: flex;
+    align-items: center;
+    vertical-align: top;    
+}
+
+.homepage-hero img {
+    max-width: 200px !important;
+    border-radius: 20px;
+}
+
+.homepage-hero blockquote {
+    margin-left: 20px;
+}
