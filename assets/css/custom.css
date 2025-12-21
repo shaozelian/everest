@@ -3,9 +3,10 @@ a {
 }
 
 .site-logo {
-    margin-top: 40px;
+    margin-top: 40px !important;
     margin-left: 10px;
     width: 100px !important;
+    height: 100px !important;
 }
 
 site-footer {
