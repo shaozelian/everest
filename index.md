@@ -7,15 +7,20 @@ search_exclude: true
 
 <div class="homepage-hero" markdown="block">
 
+
 ![Coffee & Books]({{ '/assets/images/coffee-book.avif' | relative_url }})
 
-> Embracing the power of less. I find my peace in elegant simplicity, prioritizing the essentials over the excess.
-> {: .fs-6 .fw-300 }
-> I find my greatest joy in life's smallest, quietest details.
-> {: .fs-6 .fw-300 }
-> ![Wikipedia]({{ '/assets/images/Wikipedia-logo-v2.svg' | relative_url }}){: width="24" }
-> [MINIMALISM (making more with LESS)](https://en.wikipedia.org/wiki/Minimalism)
-> {: .fs-3 .fw-300 }
+<div class="fs-6 fw-300 p-5" markdown="block">
+Embracing the power of less. I find my peace in elegant simplicity, prioritizing the essentials over the excess.
+
+I find my greatest joy in life's smallest, quietest details.
+
+<div class="fs-3 fw-300" style="text-align: right" markdown="block">
+![Wikipedia]({{ '/assets/images/Wikipedia-logo-v2.svg' | relative_url }}){: width="24" }
+[MINIMALISM (making more with LESS)](https://en.wikipedia.org/wiki/Minimalism){:target="_blank"}
+</div>
+
+</div>
 
 </div>
 
