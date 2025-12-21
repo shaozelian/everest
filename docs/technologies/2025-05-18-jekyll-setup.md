@@ -7,10 +7,8 @@ parent: Jekyll Series
 nav_order: 1
 tags: [jekyll, blog]
 has_toc: true
+excerpt: Github Pages can provide free static web pages hosting. Jekyll is a popular static site generator that integrates seamlessly with GitHub Pages. Here's how you can set up and use Jekyll with GitHub Pages...
 ---
-
-Github Pages can provide free static web pages hosting. Jekyll is a popular static site generator that integrates seamlessly with GitHub Pages. Here's how you can set up and use Jekyll with GitHub Pages...
-{: .fs-6 .fw-300 }
 
 ## Table of contents
 {: .no_toc .text-delta }

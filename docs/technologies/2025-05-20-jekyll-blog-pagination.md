@@ -6,10 +6,8 @@ date: 2025-05-20
 parent: Jekyll Series
 nav_order: 3
 tags: [jekyll, blog]
+excerpt: Pagination is common practice if there are more posts in your blog. Jekyll also supports this feature by "jekyll-paginate" plugin.
 ---
-
-Pagination is common practice if there are more posts in your blog. Jekyll also supports this feature by "jekyll-paginate" plugin.
-{: .fs-6 .fw-300 }
 
 *Reference: [Pagination \| Jekyll](https://jekyllrb.com/docs/pagination/)*
 

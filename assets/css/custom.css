@@ -16,3 +16,24 @@ site-footer {
 .homepage-hero blockquote {
     margin-left: 20px;
 }
+
+
+/* Add this CSS to a custom stylesheet */
+.article{
+    border-bottom: solid 1px #9b9999;
+    margin: 10px;
+    padding: 5px;
+}
+
+.article .title {
+    margin-bottom: 5px;
+}
+
+.article .title a {
+    text-decoration: none !important;
+}
+
+.article .meta-data {
+   font-size: 0.75rem !important;
+   margin-bottom: 5px;
+}

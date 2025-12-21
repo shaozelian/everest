@@ -6,10 +6,8 @@ date: 2025-05-21
 parent: Jekyll Series
 nav_order: 4
 tags: [jekyll, blog]
+excerpt: Tag an categorize posts are supported by Jekyll.
 ---
-
-Tag an categorize posts are supported.
-{: .fs-6 .fw-300 }
 
 ## Table of contents
 {: .no_toc .text-delta }

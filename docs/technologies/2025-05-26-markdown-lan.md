@@ -5,13 +5,14 @@ author: Shao Zelian
 date: 2025-05-26
 parent: 💻 Technologies
 tags: [markdown]
+excerpt: Markdown语法参考以及常用的技巧。
 ---
 
 [Markdown 教程](https://markdown.com.cn/basic-syntax/)
-{: .fs-6 .fw-300 }
+{: .fs-4 .fw-300 }
 
 [最全面的 Markdown 语法参考手册](https://blog.axiaoxin.com/post/markdown-guide/)
-{: .fs-6 .fw-300 }
+{: .fs-4 .fw-300 }
 
 ## 如何修改Markdown Table的样式
 

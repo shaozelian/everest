@@ -5,6 +5,7 @@ author: Shao Zelian
 date: 2025-08-03
 parent: 🧭 Management
 tags: [PMP]
+excerpt: PMBOK®结构，如何阅读PMBOK®。
 ---
 
 ```mermaid
