@@ -6,7 +6,7 @@ date: 2025-05-19
 parent: Jekyll Series
 nav_order: 2
 tags: [jekyll, blog]
-excerpt: Blog is an informational website consisting of articles (also known as posts). Jekyll is a very simple template for blog site but popular and easy to use. Prerequisite: This post assumes you have already a website built using Jekyll template.
+excerpt: Blog is an informational website consisting of articles (also known as posts). Jekyll is a very simple template for blog site but popular and easy to use. 
 ---
 
 ## Table of contents
@@ -16,6 +16,8 @@ excerpt: Blog is an informational website consisting of articles (also known as 
 {: toc}
 
 ---
+
+*Prerequisite: This post assumes you have already a website built using Jekyll template.*
 
 ## Page structure
 <span class="highlight">highlighted</span> are used specifically for posts.)<br/>

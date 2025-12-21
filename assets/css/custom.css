@@ -1,3 +1,13 @@
+a {
+    text-decoration: none !important;
+}
+
+.site-logo {
+    margin-top: 40px;
+    margin-left: 10px;
+    width: 100px !important;
+}
+
 site-footer {
     display: none !important;
 }
@@ -9,14 +19,13 @@ site-footer {
 }
 
 .homepage-hero img {
-    max-width: 200px !important;
+    max-width: 230px !important;
     border-radius: 20px;
 }
 
 .homepage-hero blockquote {
     margin-left: 20px;
 }
-
 
 /* Add this CSS to a custom stylesheet */
 .article{
@@ -29,9 +38,7 @@ site-footer {
     margin-bottom: 5px;
 }
 
-.article .title a {
-    text-decoration: none !important;
-}
+
 
 .article .meta-data {
    font-size: 0.75rem !important;

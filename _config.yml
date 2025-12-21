@@ -39,7 +39,7 @@ url: https://shaozelian.github.io/everest/
 favicon_ico: "/favicon.png"
 
 # Set a path/url to a logo that will be displayed instead of the title
-logo: "/assets/images/everest-logo-h.png"
+logo: "/assets/images/blog-logo.png"
 
 # Enable or disable the site search
 # Supports true (default) or false

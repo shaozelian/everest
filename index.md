@@ -2,6 +2,7 @@
 layout: default
 title: 🏠 Home
 nav_order: 1
+search_exclude: true
 ---
 
 <div class="homepage-hero" markdown="block">
@@ -14,7 +15,7 @@ nav_order: 1
 > {: .fs-6 .fw-300 }
 > ![Wikipedia]({{ '/assets/images/Wikipedia-logo-v2.svg' | relative_url }}){: width="24" }
 > [MINIMALISM (making more with LESS)](https://en.wikipedia.org/wiki/Minimalism)
-> {: .fs-4 .fw-300 }
+> {: .fs-3 .fw-300 }
 
 </div>
 
