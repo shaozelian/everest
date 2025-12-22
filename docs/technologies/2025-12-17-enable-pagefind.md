@@ -3,7 +3,7 @@ layout: post
 title: Pagefind Plugin
 author: Shao Zelian
 date: 2025-12-17
-parent: Jekyll
+parent: Jekyll📚
 tags: [Jekyll]
 excerpt: Adding search to a static website is particularly useful when the website contains a large amount of content or when the content is frequently updated. [Pagefind](https://pagefind.app/) is a static search library that can be integrated with various website frameworks. It aims to provide efficient search functionality while minimizing bandwidth usage and without requiring additional infrastructure.
 ---

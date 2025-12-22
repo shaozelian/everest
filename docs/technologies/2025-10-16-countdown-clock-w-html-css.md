@@ -3,7 +3,7 @@ layout: post
 title: CSS Countdown Clock
 author: Shao Zelian
 date: 2025-10-16
-parent: 💻 Technologies
+parent: CSS/HTML/JavaScript📚
 tags: [css]
 excerpt: To make a beautiful countdown clock only with HTML and CSS
 ---

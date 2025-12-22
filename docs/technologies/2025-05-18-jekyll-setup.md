@@ -3,7 +3,7 @@ layout: post
 title: Jekyll/GitHub Pages Set-up
 author: Shao Zelian
 date: 2025-05-18
-parent: Jekyll
+parent: Jekyll📚
 nav_order: 1
 tags: [jekyll, blog]
 has_toc: true

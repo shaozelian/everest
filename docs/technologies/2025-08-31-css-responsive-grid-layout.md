@@ -3,7 +3,7 @@ layout: post
 title: Responsible Grid Layout
 author: Shao Zelian
 date: 2025-08-31
-parent: 💻 Technologies
+parent: CSS/HTML/JavaScript📚
 tags: [css]
 excerpt: To make a responsible layout using Grid
 ---

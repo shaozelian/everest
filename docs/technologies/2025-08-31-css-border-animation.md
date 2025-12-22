@@ -3,7 +3,7 @@ layout: post
 title: CSS border animiation
 author: Shao Zelian
 date: 2025-08-31
-parent: 💻 Technologies
+parent: CSS/HTML/JavaScript📚
 tags: [css]
 excerpt: To make border animated using css only
 ---

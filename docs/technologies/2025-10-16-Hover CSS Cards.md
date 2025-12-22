@@ -3,7 +3,7 @@ layout: post
 title: "[CSS] Hover Cards"
 author: Shao Zelian
 date: 2025-10-16
-parent: 💻 Technologies
+parent: CSS/HTML/JavaScript📚
 tags: [css]
 excerpt: To make beautiful cards with HTML and CSS.
 ---

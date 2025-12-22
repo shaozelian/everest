@@ -5,7 +5,7 @@ author: Shao Zelian
 date: 2025-06-02
 parent: 💻 Technologies
 tags: [blog, markdown]
-excerpt: Try to use mermaid to draw an OrgChart
+excerpt: Zoom and pan SVG diagram in HTMl page.
 ---
 
 ## Mermaid tree diagram

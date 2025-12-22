@@ -3,8 +3,8 @@ layout: post
 title: Enlarge/minimize DIV
 author: Shao Zelian
 date: 2025-06-19
-parent: 💻 Technologies
-tags: [css]
+parent: CSS/HTML/JavaScript📚
+tags: [css, javascript]
 excerpt: To make a div content popup window with enlarging and mimizing functions
 ---
 

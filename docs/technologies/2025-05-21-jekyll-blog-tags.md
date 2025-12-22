@@ -3,7 +3,7 @@ layout: post
 title: Enable tags / categories
 author: Shao Zelian
 date: 2025-05-21
-parent: Jekyll
+parent: Jekyll📚
 nav_order: 4
 tags: [jekyll, blog]
 excerpt: Tag an categorize posts are supported by Jekyll.

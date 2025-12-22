@@ -3,7 +3,7 @@ layout: post
 title: Infinite scroll animation
 author: Shao Zelian
 date: 2025-10-20
-parent: 💻 Technologies
+parent: CSS/HTML/JavaScript📚
 tags: [css]
 excerpt: Create infinite scroll animation with HTML and CSS.
 ---

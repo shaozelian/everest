@@ -3,8 +3,8 @@ layout: post
 title: Timer ticker
 author: Shao Zelian
 date: 2025-10-20
-parent: 💻 Technologies
-tags: [css]
+parent: CSS/HTML/JavaScript📚
+tags: [css, javascript]
 excerpt: Timer ticker with HTML/CSS and Javascript
 ---
 

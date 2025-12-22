@@ -3,7 +3,7 @@ layout: post
 title: Create a blog site
 author: Shao Zelian
 date: 2025-05-19
-parent: Jekyll
+parent: Jekyll📚
 nav_order: 2
 tags: [jekyll, blog]
 excerpt: Blog is an informational website consisting of articles (also known as posts). Jekyll is a very simple template for blog site but popular and easy to use. 
