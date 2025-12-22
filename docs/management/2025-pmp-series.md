@@ -1,6 +1,6 @@
 ---
 layout: post
-title: PMBOK® Guide
+title: PMBOK® Guide📚
 author: Shao Zelian
 date: 2025-05-01
 parent: 🧭 Management
