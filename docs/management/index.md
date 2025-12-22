@@ -2,7 +2,7 @@
 layout: post
 title: 🧭 Management
 author: Shao Zelian
-nav_order: 3
+nav_order: 2
 ---
 
 Management theories, project management
