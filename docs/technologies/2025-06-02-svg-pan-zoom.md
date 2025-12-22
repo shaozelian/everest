@@ -1,0 +1,75 @@
+---
+layout: post
+title: Zoom and pan SVG in HTML
+author: Shao Zelian
+date: 2025-06-02
+parent: 💻 Technologies
+tags: [blog, markdown]
+excerpt: Try to use mermaid to draw an OrgChart
+---
+
+## Mermaid tree diagram
+
+```mermaid
+%%{init: {"theme": "default",
+	"logLevel": "info",
+	"useMaxWidth": true
+}}%%
+
+flowchart TD
+	A[Root] --> B[Child 1]
+	A --> C
+	B --> D
+	D --> E
+
+	click A callback "Tooltip"
+	click B callback "Tooltip"
+	click C callback "Tooltip"
+```
+
+## Install svg-pan-zoom plugin
+
+- Goto https://github.com/bumbu/svg-pan-zoom
+- Download "svg-pan-zoom.min.js" file.
+- Include the javascript file in web page.
+- Call init method.
+
+Sample code block (mermaid chart as example).
+> Tip: Mermaid.js often generates SVGs dynamically, so need to wait for them to appear. (DOMContentLoaded) <br/>
+> Tip: To change the default svg width as "100%".
+
+~~~html
+<head>
+    ...
+    <script src="/assets/js/svg-pan-zoom.min.js" type="text/javascript"></script>
+    ...
+</head>
+
+<body>
+    ...
+    <script>
+        //....
+        /** svg-pan-zoom plugin */
+        document.addEventListener('DOMContentLoaded', function () {
+            var svgElements = document.querySelectorAll('.language-mermaid > svg')
+            console.log("DOMContentLoaded " + svgElements.length);
+            if (svgElements.length > 0) {
+                svgElements.forEach(el => {
+                    var panZoomInstance = svgPanZoom(`#${el.id}`, {
+                        zoomEnabled: true,
+                        controlIconsEnabled: true,
+                        fit: true,
+                        center: true
+                    });
+
+                    var panZoomContainer = el.querySelector('.svg-pan-zoom-control');
+                    if (panZoomContainer) {
+                        // debugger;
+                        panZoomContainer.style.transform = "translate(0, 0) scale(0.7)";
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+~~~

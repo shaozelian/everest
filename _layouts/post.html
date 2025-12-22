@@ -3,27 +3,27 @@ layout: default
 ---
 
 {% if page.title %}
-  <h1>{{ page.title }}</h1>
+<h1>{{ page.title }}</h1>
 {% endif %}
 
 <div class="page-metadata fs-2">
   {% if page.author %}
-    <span class="author">👤 {{ page.author }}</span>
+  <span class="author">👤 {{ page.author }}</span>
   {% endif %}
 
-   {% if page.date %}
-    <span> | 📅 Created: {{ page.date | date: "%Y-%m-%d" }}</span>
+  {% if page.date %}
+  <span> | 📅 Created: {{ page.date | date: "%Y-%m-%d" }}</span>
   {% endif %}
-  
+
   {% if page.last_modified_at %}
-    <span> | 📅 Last updated: {{ page.last_modified_at | date: "%Y-%m-%d" }}</span>
+  <span> | 📅 Last updated: {{ page.last_modified_at | date: "%Y-%m-%d" }}</span>
   {% endif %}
 
   {% if page.tags %}
-      | 🏷️ Tags: 
-      {% for tag in page.tags %}
-        <span class="label label-purple" style="font-size: 9px !important">{{ tag }}</span>
-      {% endfor %}
+  | 🏷️ Tags:
+  {% for tag in page.tags %}
+  <span class="label label-purple" style="font-size: 9px !important">{{ tag }}</span>
+  {% endfor %}
   {% endif %}
 </div>
 

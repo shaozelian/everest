@@ -3,7 +3,7 @@ layout: post
 title: PMBOK®阅读大纲
 author: Shao Zelian
 date: 2025-08-03
-parent: 🧭 Management
+parent: PMBOK® Guide
 tags: [PMP]
 excerpt: PMBOK®结构，如何阅读PMBOK®。
 ---
