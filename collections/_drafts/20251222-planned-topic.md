@@ -21,6 +21,11 @@ nav_order: 1
 - Tech references
 - release notes
 
+## GitHub Profile
+
+- https://youtu.be/n6d4KHSKqGk?si=5RHFJM-f3dbKLVZM
+- https://youtu.be/KhGWbt1dAKQ?si=4oOiCyYNPzFtuUnl
+
 ## AI单独分类
 
 - AI 使用感受
