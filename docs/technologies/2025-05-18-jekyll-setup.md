@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Jekyll/GitHub Pages Set-up
+title: Jekyll/GitHub Pages Set-up (Windows)
 author: Shao Zelian
 date: 2025-05-18
 parent: Jekyll📚
@@ -58,7 +58,7 @@ The step is optional. If you want to see how it is easy to quickly enable Jekyll
 
 Open <a href="javascript:void(0);">https://{username}.github.io</a>.
 
-## Part 2 - Set up local development and CI/CD environment.
+## Part 2 - Set up local development and CI/CD environment. (Windows)
 
 In the real world, we normally need a local development environment which allows us to code, local debugging and testing. It doesn't need deploy uncompleted work to remote website every time. <br/>
 In this section, we will lead you step by step for how to set the local development using Microsoft Visual Studio within Windows system.
