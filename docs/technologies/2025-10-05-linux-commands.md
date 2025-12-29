@@ -67,7 +67,7 @@ excerpt: 常用Linux Commands（持续更新）
   - sudo apt upgrade: upgrade packages.
   - sudo apt install {package name}
 - wget: download file from internet, wget {url}
-- grep: search. For example, ls | grep xxx.
+- grep: search. For example, ls \| grep xxx.
 - chmod: change file permission
   - r: read
   - w: write
