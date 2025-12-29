@@ -4,17 +4,6 @@ title: ℹ️ About
 nav_order: 99
 ---
 
-About the site
-{: .fs-6 .fw-300 }
-
-## Table of contents
-{: .no_toc .text-delta }
-
-- TOC
-{: toc}
-
----
-
 ## Release Notes
 
 ## References
