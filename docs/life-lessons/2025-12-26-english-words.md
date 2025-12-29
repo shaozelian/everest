@@ -20,6 +20,12 @@ excerpt: Collection of new English words
 
 ---
 
+📅 2025-12-29
+
+1. <a href="#" onclick="playVoice('metaphor');">Metaphor 🔊 隐喻，比喻</a>
+2. <a href="#" onclick="playVoice('pavement');">Pavement 🔊 人行道</a>
+3. <a href="#" onclick="playVoice('essence');">Essence 🔊 本质</a>
+
 📅 2025-12-26
 
 1. <a href="#" onclick="playVoice('Venezuela');">Venezuela 🔊 委内瑞拉</a>
