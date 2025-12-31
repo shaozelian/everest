@@ -5,7 +5,7 @@
 * {
     margin: 0;
     padding: 0;
-    color: #d0d0d0;    
+    color: #d0d0d0;
 }
 
 .container {
@@ -81,8 +81,50 @@ h1 span {
     margin: 0 0 5px;
 }
 
-h1, .time h2 {
+h1,
+.time h2,
+tim>small {
     text-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+.left-text {
+    position: absolute;
+    left: 500px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 80px;
+    font-weight: bold;
+}
+
+.left-text span {
+    font-size: 100px;
+    /* Set a large font size for visibility */
+    font-weight: bold;
+    /* Bold text often shows the gradient better */
+    background-image: linear-gradient(to right, #d0d0d0, yellow, gold);
+    /* Define the gradient */
+    -webkit-background-clip: text;
+    /* Clip the background to the shape of the text (for WebKit browsers) */
+    background-clip: text;
+    /* Standard property for clipping the background to the text */
+    color: transparent;
+    /* Make the actual text transparent, revealing the clipped background */
+    display: inline-block;
+    /* Ensures the gradient's width matches the text width for block elements */
+}
+
+.horse {
+    position: absolute;
+    right: 30px;
+    width: 50%;
+    z-index: 10;
+    margin: 0 auto;
+    opacity: 0.8;
+}
+
+.horse img {
+    width: 60%;
+    height: auto;
 }
 
 
