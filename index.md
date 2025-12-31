@@ -22,8 +22,8 @@ search_exclude: true
   border-radius: 20px;
 }
 
-/* 当屏幕宽度大于 600px 时切换为两列 */
-@media (min-width: 600px) {
+/* 当屏幕宽度大于 768px 时切换为两列 */
+@media (min-width: 768px) {
   .home-hero-container {
     /* 第一列固定宽度（或设为图片的最大宽），第二列占满剩余空间 */
     grid-template-columns: 300px 1fr; 
