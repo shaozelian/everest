@@ -11,13 +11,13 @@ a {
     height: 100px !important;
 }
 
-@media (max-width: 768px) {
-.site-logo {
-    margin-top: 10px !important;
-    margin-left: 10px;
-    width: 50px !important;
-    height: 50px !important;
-}
+@media (max-width: 432px) {
+    .site-logo {
+        margin-top: 10px !important;
+        margin-left: 10px;
+        width: 50px !important;
+        height: 50px !important;
+    }
 }
 
 
@@ -28,7 +28,7 @@ site-footer {
 .homepage-hero {
     display: flex;
     align-items: center;
-    vertical-align: top;    
+    vertical-align: top;
 }
 
 .homepage-hero img {
@@ -41,7 +41,7 @@ site-footer {
 }
 
 /* Add this CSS to a custom stylesheet */
-.article{
+.article {
     border-bottom: solid 0px #9b9999;
     margin: 10px;
     padding: 5px;
@@ -54,6 +54,6 @@ site-footer {
 
 
 .article .meta-data {
-   font-size: 0.75rem !important;
-   margin-bottom: 5px;
+    font-size: 0.75rem !important;
+    margin-bottom: 5px;
 }
