@@ -20,6 +20,11 @@ excerpt: Collection of new English words
 
 ---
 
+📅 2025-12-31
+
+1. <a href="javascript:void(0)" onclick="playVoice('Orchestra');">Orchestra 🔊 管弦乐队</a>
+2. <a href="javascript:void(0)" onclick="playVoice('Orchestration');">Orchestration 🔊 编排</a>
+
 📅 2025-12-29
 
 1. <a href="javascript:void(0)" onclick="playVoice('metaphor');">Metaphor 🔊 隐喻，比喻</a>
