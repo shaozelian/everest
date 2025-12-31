@@ -24,6 +24,29 @@ excerpt: Collection of new English words
 
 1. <a href="javascript:void(0)" onclick="playVoice('Orchestra');">Orchestra 🔊 管弦乐队</a>
 2. <a href="javascript:void(0)" onclick="playVoice('Orchestration');">Orchestration 🔊 编排</a>
+3. <a href="javascript:void(0)" onclick="playVoice('Syria');">Syria 🔊 叙利亚</a>
+4. <a href="javascript:void(0)" onclick="playVoice('Incentive');">Incentive 🔊 激励/激励措施</a>
+5. <a href="javascript:void(0)" onclick="playVoice('Zelenskyy');">Zelenskyy 🔊 泽连斯基</a>
+6. <a href="javascript:void(0)" onclick="playVoice('North Atlantic Treaty Organization (NATO)');">North Atlantic Treaty Organization (NATO) 🔊 北约（北大西洋合约组织）</a>
+7. <a href="javascript:void(0)" onclick="playVoice('Allege');">Allege 🔊 声称</a>
+8. <a href="javascript:void(0)" onclick="playVoice('Netanyahu');">Netanyahu 🔊 内塔尼亚胡</a>
+9. <a href="javascript:void(0)" onclick="playVoice('Maduro');">Maduro 🔊 马杜罗</a>
+10. <a href="javascript:void(0)" onclick="playVoice('Cartel');">Cartel 🔊 卡特尔，企业联盟</a>
+11. <a href="javascript:void(0)" onclick="playVoice('Drug Cartel');">Drug Cartel 🔊 毒品Cartel，指毒品网络</a>
+12. <a href="javascript:void(0)" onclick="playVoice('Oil Cartel');">Oil Cartel 🔊 石油Cartel，例如OPEC</a>
+13. <a href="javascript:void(0)" onclick="playVoice('Vessel');">Vessel 🔊 容器，船舶，血管</a>
+14. <a href="javascript:void(0)" onclick="playVoice('Israel');">Israel 🔊 以色列</a>
+15. <a href="javascript:void(0)" onclick="playVoice('Middle East');">Middle East 🔊 中东</a>
+16. <a href="javascript:void(0)" onclick="playVoice('Hamas');">Hamas 🔊 哈马斯</a>
+17. <a href="javascript:void(0)" onclick="playVoice('Gaza');">Gaza 🔊 加沙</a>
+18. <a href="javascript:void(0)" onclick="playVoice('Disarm');">Disarm 🔊 解除武装</a>
+19. <a href="javascript:void(0)" onclick="playVoice('Vanish');">Vanish 🔊 消失</a>
+20. <a href="javascript:void(0)" onclick="playVoice('Ballistic Missile');">Ballistic Missile 🔊 弹道导弹</a>
+21. <a href="javascript:void(0)" onclick="playVoice('Saudi Arabia');">Saudi Arabia 🔊 沙特阿拉伯</a>
+22. <a href="javascript:void(0)" onclick="playVoice('Vowel');">Vowel 🔊 元音</a>
+23. <a href="javascript:void(0)" onclick="playVoice('Coonsonant');">Consonant 🔊 辅音</a>
+24. <a href="javascript:void(0)" onclick="playVoice('Syllable');">Syllable 🔊 音节</a>
+25. <a href="javascript:void(0)" onclick="playVoice('Slur');">Slur 🔊 诋毁(v.), 诋毁行言辞(n.)，含糊其辞</a> 
 
 📅 2025-12-29
 
@@ -52,7 +75,7 @@ excerpt: Collection of new English words
     > It's me versus me.
     > Every day I wake up ready to push myself further,
     > to challenge my limits and to become the best version of myself.
-    > **I don't let other people's success make me fell small.**
+    > **I don't let other people's success make me feel small.**
     > **Their journey is theirs and mine is mine.**
 15. Vegetables:
     - <a href="javascript:void(0)" onclick="playVoice('Wasabi');">Wasabi 🔊山葵，芥末</a>
