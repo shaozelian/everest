@@ -5,23 +5,52 @@ nav_order: 1
 search_exclude: true
 ---
 
-<div class="homepage-hero" markdown="block">
+<style>
+
+.home-hero-container {
+  display: grid;
+  gap: 20px; /* 设置间距 */
+  /* 默认：移动端单列（即两行效果） */
+  grid-template-columns: 1fr;
+}
+
+.image-wrapper img {
+  width: 100%;
+  max-width: 300px; /* 限制图片最大宽度 */
+  height: auto;
+  display: block;
+  border-radius: 20px;
+}
+
+/* 当屏幕宽度大于 600px 时切换为两列 */
+@media (min-width: 600px) {
+  .home-hero-container {
+    /* 第一列固定宽度（或设为图片的最大宽），第二列占满剩余空间 */
+    grid-template-columns: 300px 1fr; 
+    align-items: start; /* 顶部对齐 */
+  }
+}
 
 
-![Coffee & Books]({{ '/assets/images/coffee-book.avif' | relative_url }})
+</style>
 
-<div class="fs-6 fw-300 p-5" markdown="block">
-Embracing the power of less. I find my peace in elegant simplicity, prioritizing the essentials over the excess.
-
-I find my greatest joy in life's smallest, quietest details.
-
-<div class="fs-3 fw-300" style="text-align: right" markdown="block">
-![Wikipedia]({{ '/assets/images/Wikipedia-logo-v2.svg' | relative_url }}){: width="24" }
-[MINIMALISM (making more with LESS)](https://en.wikipedia.org/wiki/Minimalism){:target="_blank"}
-</div>
-
-</div>
-
+<div class="home-hero-container" markdown="html">
+    <div class="image-wrapper p-1">
+        <img src="{{ '/assets/images/coffee-book.avif' | relative_url }}" />
+    </div>
+    <div class="fs-6 fw-300 p-1">
+        <div>
+            Embracing the power of less. <br/>
+            I find my peace in elegant simplicity, prioritizing the essentials over the excess.
+        </div>
+        <div class="fs-2 mt-10" style="text-align: right;">
+            <i>I find my greatest joy in life's smallest, quietest details.</i>
+        </div>
+        <div class="fs-2 fw-300" style="text-align: right" markdown="html">
+            <img src="{{ '/assets/images/wikipedia-logo-v2.svg' | relative_url }}" style="width:24px;" />
+            <a href="https://en.wikipedia.org/wiki/Minimalism" target="_blank">MINIMALISM (making more with LESS)</a>
+        </div>
+    </div>
 </div>
 
 ---
@@ -50,7 +79,7 @@ I find my greatest joy in life's smallest, quietest details.
         {% endif %}
 
         {% if article.tags %}
-            | 🏷️ Tags: 
+            | 🏷️ Tags:
             {% for tag in article.tags %}
                 <span class="label label-purple" style="font-size: 9px !important">{{ tag }}</span>
             {% endfor %}
@@ -64,5 +93,7 @@ I find my greatest joy in life's smallest, quietest details.
             {% endif %}
         </div>
     </div>
-  {% endfor %}
+
+{% endfor %}
+
 </div>
