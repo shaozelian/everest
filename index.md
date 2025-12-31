@@ -38,15 +38,16 @@ search_exclude: true
     <div class="image-wrapper p-1">
         <img src="{{ '/assets/images/coffee-book.avif' | relative_url }}" />
     </div>
-    <div class="fs-6 fw-300 p-1">
+    <div class="fs-6 fw-300 p-1" style="text-align: center;">
         <div>
             Embracing the power of less. <br/>
             I find my peace in elegant simplicity, prioritizing the essentials over the excess.
         </div>
-        <div class="fs-2 mt-10" style="text-align: right;">
+        <hr/>
+        <div class="fs-2 mt-3" style="text-align: center;">
             <i>I find my greatest joy in life's smallest, quietest details.</i>
         </div>
-        <div class="fs-2 fw-300 mt-2" style="text-align: right" markdown="html">
+        <div class="fs-2 fw-300 mt-2" style="text-align: center" markdown="html">
             <img src="{{ '/assets/images/logos/wikipedia-logo-v2.svg' | relative_url }}" style="width:24px;" />
             <a href="https://en.wikipedia.org/wiki/Minimalism" target="_blank">MINIMALISM (making more with LESS)</a>
         </div>
