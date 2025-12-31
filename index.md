@@ -46,8 +46,8 @@ search_exclude: true
         <div class="fs-2 mt-10" style="text-align: right;">
             <i>I find my greatest joy in life's smallest, quietest details.</i>
         </div>
-        <div class="fs-2 fw-300" style="text-align: right" markdown="html">
-            <img src="{{ '/assets/images/wikipedia-logo-v2.svg' | relative_url }}" style="width:24px;" />
+        <div class="fs-2 fw-300 mt-2" style="text-align: right" markdown="html">
+            <img src="{{ '/assets/images/logos/wikipedia-logo-v2.svg' | relative_url }}" style="width:24px;" />
             <a href="https://en.wikipedia.org/wiki/Minimalism" target="_blank">MINIMALISM (making more with LESS)</a>
         </div>
     </div>
