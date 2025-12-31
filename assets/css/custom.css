@@ -11,6 +11,16 @@ a {
     height: 100px !important;
 }
 
+@media (max-width: 600px) {
+.site-logo {
+    margin-top: 10px !important;
+    margin-left: 10px;
+    width: 50px !important;
+    height: 50px !important;
+}
+}
+
+
 site-footer {
     display: none !important;
 }

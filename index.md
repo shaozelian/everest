@@ -31,7 +31,6 @@ search_exclude: true
   }
 }
 
-
 </style>
 
 <div class="home-hero-container" markdown="html">
