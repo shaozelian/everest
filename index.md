@@ -33,6 +33,18 @@ search_exclude: true
 
 </style>
 
+<script>
+
+window.onload = function() {
+    const now = new Date();
+    const newYearTime = new Date('2026-01-01T00:00:00');
+    if(now <= newYearTime){
+        window.location.href = "{{ '/assets/labs/2026-countdown' | relative_url }}";
+    }    
+};
+
+</script>
+
 <div class="home-hero-container" markdown="html">
     <div class="image-wrapper p-1">
         <img src="{{ '/assets/images/coffee-book.avif' | relative_url }}" />
