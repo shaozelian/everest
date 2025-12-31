@@ -46,7 +46,20 @@ excerpt: Collection of new English words
 22. <a href="javascript:void(0)" onclick="playVoice('Vowel');">Vowel 🔊 元音</a>
 23. <a href="javascript:void(0)" onclick="playVoice('Coonsonant');">Consonant 🔊 辅音</a>
 24. <a href="javascript:void(0)" onclick="playVoice('Syllable');">Syllable 🔊 音节</a>
-25. <a href="javascript:void(0)" onclick="playVoice('Slur');">Slur 🔊 诋毁(v.), 诋毁行言辞(n.)，含糊其辞</a> 
+25. <a href="javascript:void(0)" onclick="playVoice('Slur');">Slur 🔊 诋毁(v.), 诋毁行言辞(n.)，含糊其辞</a>
+26. <a href="javascript:void(0)" onclick="playVoice('Clash');">Clash 🔊 冲突</a>
+27. <a href="javascript:void(0)" onclick="playVoice('Islam');">Islam 🔊 伊斯兰</a>
+28. <a href="javascript:void(0)" onclick="playVoice('Muslim');">Muslim 🔊 穆斯林</a>
+29. <a href="javascript:void(0)" onclick="playVoice('Iran');">Iran 🔊 伊朗</a>
+30. <a href="javascript:void(0)" onclick="playVoice('Iranian');">Iranian 🔊 伊朗人</a>
+31. <a href="javascript:void(0)" onclick="playVoice('Tehran');">Tehran 🔊 德黑兰</a>
+32. <a href="javascript:void(0)" onclick="playVoice('Regime');">Regime 🔊 政权</a>
+33. <a href="javascript:void(0)" onclick="playVoice('Humiliation');">Humiliation 🔊 羞辱</a>
+34. <a href="javascript:void(0)" onclick="playVoice('Kurds');">Kurds 🔊 库尔德人</a>
+35. <a href="javascript:void(0)" onclick="playVoice('Uprising');">Uprising 🔊 起义</a>
+36. <a href="javascript:void(0)" onclick="playVoice('Persia');">Persia/Persian 🔊 波斯/波斯人</a>
+37. <a href="javascript:void(0)" onclick="playVoice('Rigged Election');">Rigged Election 🔊 被操纵的选举</a>
+38. <a href="javascript:void(0)" onclick="playVoice('Symbolic');">Symbolic 🔊 象征性的</a>
 
 📅 2025-12-29
 
