@@ -1,0 +1,33 @@
+---
+layout: post
+---
+
+<script>
+
+    function playVoice(word) {
+        const url = "https://dict.youdao.com/dictvoice?audio="+word+"&type=2";
+        const audio = new Audio(url);
+        audio.play();
+    }
+
+</script>
+
+<hr/>
+{% if page.month %}
+
+    {% assign month = site.data.words[page.month] %}
+    {% if month %}
+        {% assign sorted = month.days | sort: "date" | reverse %}
+
+        {% for day in sorted %}
+            <h3>📅 {{ day.date }}</h3>
+            {% for word in day.words %}
+                {{ forloop.index }}. <a href="javascript:void(0)" onclick="playVoice('{{ word.en }}');">{{ word.en }} 🔊 {{ word.cn }}</a><br/>
+            {% endfor %}
+        {% endfor %}
+
+    {% else %}
+        <span>{{ page.month }} data not found. </span>       
+    {% endif %}
+
+{% endif %}
