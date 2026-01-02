@@ -22,7 +22,7 @@ layout: post
         {% for day in sorted %}
             <h3>📅 {{ day.date }}</h3>
             {% for word in day.words %}
-                {{ forloop.index }}. <a href="javascript:void(0)" onclick="playVoice('{{ word.en }}');">{{ word.en }} 🔊 {{ word.cn }}</a><br/>
+                {{ forloop.index }}. <a href="javascript:void(0)" onclick="playVoice('{{ word.en }}');">{{ word.en }} 🔊 {{ word.cn }}</a>&nbsp;→&nbsp;<a href="https://dict.youdao.com/result?word={{ word.en }}&lang=en" target="_blank">🔗</a> <br/>
             {% endfor %}
         {% endfor %}
 
