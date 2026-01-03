@@ -28,7 +28,12 @@ layout: post
 
         {% for day in sorted %}
             <h3>📅 {{ day.date }} 
-                <span class="fs-3"> <a href="javascript:void(0)" onclick="startTest()" title="Test">📝</a> </span>
+                <span class="fs-3" id="start"> 
+                  <a href="javascript:void(0)" onclick="startTest()" title="Test">📝</a> 
+                </span>
+                <span class="fs-3 d-none" id="close"> 
+                  <a href="javascript:void(0)" onclick="closeTest()" title="Close">✖</a>
+                </span>                
             </h3>
             {% for word in day.words %}
                 {{ forloop.index }}. <a href="javascript:void(0)" onclick="playVoice('{{ word.en }}');">{{ word.en }} 🔊 {{ word.cn }}</a>&nbsp;→&nbsp;<a href="https://dict.youdao.com/result?word={{ word.en }}&lang=en" target="_blank">🔗</a> <br/>
@@ -69,7 +74,15 @@ layout: post
             return;
         }
         document.getElementById("quiz").classList.remove("d-none");
+        document.getElementById("start").classList.add("d-none");
+        document.getElementById("close").classList.remove("d-none");
         nextWord();
+    }
+
+    function closeTest() {
+        document.getElementById("quiz").classList.add("d-none");
+        document.getElementById("start").classList.remove("d-none");
+        document.getElementById("close").classList.add("d-none");        
     }
 
   let current = null;
