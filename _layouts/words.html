@@ -17,6 +17,7 @@ layout: post
     <span class="fs-2"> <a href="javascript:void(0)" id="nextButton" class="btn" onclick="nextWord()">➡ Next (Ctrl+Shift+.)</a> </span>
     <div id="result"></div> 
     <div id="stats"> <div id="coverage"></div> <div id="accuracy"></div> </div>
+    <div id="errors"></div>
     <hr/>
 </div>
 {% if page.month %}
@@ -106,19 +107,36 @@ layout: post
     a = a.trim().toLowerCase();
     b = b.trim().toLowerCase();
     const distance = levenshtein(a, b);
-    return distance <= 2; /* allow small mistakes */
+    return distance <= 0; /* allow 0 mistakes */
+  }
+
+  function weightedRandomWord() { 
+    /* Assign weights */
+    const weightedList = wordsData.map(w => { 
+      const isSeen = seen.has(w.en); 
+        return { 
+          word: w, 
+          weight: isSeen ? 1 : 10 /* unseen words are 10× more likely */
+        }; 
+    }); 
+    /* Compute total weight */
+    const totalWeight = weightedList.reduce((sum, item) => sum + item.weight, 0); 
+    /* Pick a random number in [0, totalWeight) */
+    let r = Math.random() * totalWeight; 
+    /* Find the chosen word */
+    for (const item of weightedList) { 
+      if (r < item.weight) return item.word; 
+      r -= item.weight; 
+    } 
   }
 
   function nextWord() {
-    current = wordsData[Math.floor(Math.random() * wordsData.length)];
+    /* current = wordsData[Math.floor(Math.random() * wordsData.length)]; */
+    current = weightedRandomWord();
     /* Mark this word as seen */
     seen.add(current.en);
 
-    if (mode === "en_to_cn") {
-      document.getElementById("word").textContent = current.en;
-    } else {
-      document.getElementById("word").textContent = current.cn;
-    }
+    document.getElementById("word").textContent = mode === "en_to_cn" ? current.en : current.cn;
 
     document.getElementById("answer").value = "";
     document.getElementById("result").textContent = "";
@@ -139,6 +157,7 @@ layout: post
     } else {
       document.getElementById("result").textContent =
         "Not quite. Correct answer: " + correct;
+      document.getElementById("errors").innerHTML += `<div>❌ ${mode === "en_to_cn" ? current.en : current.cn} → ${correct} (Your answer: ${user})</div>`;
     }
 
     updateStats();
@@ -157,22 +176,15 @@ layout: post
   function updateStats() { 
     document.getElementById("coverage").textContent = `Coverage: ${seen.size} / ${totalWords}`; 
     /* alert(correctCount + " | seen: " + seen.size); */
-    const rate = seen.size === 0 ? "Accuracy: --" : `Accuracy: ${Math.round((correctCount / seen.size) * 100)}%`; 
+    const rate = attempts === 0 ? "Accuracy: --" : `Accuracy: ${Math.round((correctCount / attempts) * 100)}%`; 
     document.getElementById("accuracy").textContent = rate; 
 }
 
     document.addEventListener("keydown", function (e) {
-    /* Ctrl + <  (Ctrl + Shift + ,) */
-    if (e.ctrlKey && e.shiftKey && e.key === ",") {
-        e.preventDefault();
-        checkAnswer();
-    }
-
-    /* Ctrl + >  (Ctrl + Shift + .) */
-    if (e.ctrlKey && e.shiftKey && e.key === ".") {
-        e.preventDefault();
-        nextWord();
-    }
+      /* Ctrl + [ */
+      if (e.ctrlKey && e.key === "[") { e.preventDefault(); checkAnswer(); } 
+      /* Ctrl + ] */
+      else if (e.ctrlKey && e.key === "]") { e.preventDefault(); nextWord(); }
     });
 
 
