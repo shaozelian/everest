@@ -4,15 +4,21 @@ layout: post
 
 <script>
 
-    function playVoice(word) {
-        const url = "https://dict.youdao.com/dictvoice?audio="+word+"&type=2";
-        const audio = new Audio(url);
-        audio.play();
-    }
-
 </script>
 
 <hr/>
+<div id="quiz" class="d-none"> 
+    <span class="fs-2">
+        <a href="javascript:void(0)" id="toggle" class="btn">Switch to English → Chinese</a> 
+    </span><br/>
+    <textarea id="word" placeholder="" rows="1" style="width: 100%;" disabled readonly style="background-color: wheat;"></textarea> <br/>
+    <textarea id="answer" placeholder="Type your answer" rows="2" style="width: 100%;"></textarea> <br/>
+    <span class="fs-2"> <a href="javascript:void(0)" class="btn" onclick="checkAnswer()">✔ Check (Ctrl+Shift+,)</a> </span>&nbsp;&nbsp;
+    <span class="fs-2"> <a href="javascript:void(0)" id="nextButton" class="btn" onclick="nextWord()">➡ Next (Ctrl+Shift+.)</a> </span>
+    <div id="result"></div> 
+    <div id="stats"> <div id="coverage"></div> <div id="accuracy"></div> </div>
+    <hr/>
+</div>
 {% if page.month %}
 
     {% assign month = site.data.words[page.month] %}
@@ -20,7 +26,9 @@ layout: post
         {% assign sorted = month.days | sort: "date" | reverse %}
 
         {% for day in sorted %}
-            <h3>📅 {{ day.date }}</h3>
+            <h3>📅 {{ day.date }} 
+                <span class="fs-3"> <a href="javascript:void(0)" onclick="startTest()" title="Test">📝</a> </span>
+            </h3>
             {% for word in day.words %}
                 {{ forloop.index }}. <a href="javascript:void(0)" onclick="playVoice('{{ word.en }}');">{{ word.en }} 🔊 {{ word.cn }}</a>&nbsp;→&nbsp;<a href="https://dict.youdao.com/result?word={{ word.en }}&lang=en" target="_blank">🔗</a> <br/>
             {% endfor %}
@@ -31,3 +39,141 @@ layout: post
     {% endif %}
 
 {% endif %}
+
+<script>
+    const wordsData = [];
+    {% if page.month %}
+        {% assign month = site.data.words[page.month] %}
+        {% if month %}
+            {% assign sorted = month.days | sort: "date" | reverse %}
+
+            {% for day in sorted %}
+                {% for word in day.words %}
+                    wordsData.push({ en: "{{ word.en }}", cn: "{{ word.cn }}" });
+                {% endfor %}
+            {% endfor %}
+
+        {% endif %}
+    {% endif %}
+
+    function playVoice(word) {
+        const url = "https://dict.youdao.com/dictvoice?audio="+word+"&type=2";
+        const audio = new Audio(url);
+        audio.play();
+    }
+
+    function startTest() {
+        if (wordsData.length === 0) {
+            alert("No words available for testing.");
+            return;
+        }
+        document.getElementById("quiz").classList.remove("d-none");
+        nextWord();
+    }
+
+  let current = null;
+  let mode = "cn_to_en"; /* or "en_to_cn"  */
+
+  /* Tracking coverage and correction rate*/
+  let totalWords = wordsData.length; 
+  let seen = new Set(); /* tracks which words have been shown */
+  let attempts = -1; /* total questions answered */
+  let correctCount = 0; /* correct answers */
+
+  /* Levenshtein distance for fuzzy matching */
+  function levenshtein(a, b) {
+    const dp = Array(a.length + 1).fill(null).map(() =>
+      Array(b.length + 1).fill(null)
+    );
+
+    for (let i = 0; i <= a.length; i++) dp[i][0] = i;
+    for (let j = 0; j <= b.length; j++) dp[0][j] = j;
+
+    for (let i = 1; i <= a.length; i++) {
+      for (let j = 1; j <= b.length; j++) {
+        const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+        dp[i][j] = Math.min(
+          dp[i - 1][j] + 1,
+          dp[i][j - 1] + 1,
+          dp[i - 1][j - 1] + cost
+        );
+      }
+    }
+    return dp[a.length][b.length];
+  }
+
+  function isFuzzyMatch(a, b) {
+    a = a.trim().toLowerCase();
+    b = b.trim().toLowerCase();
+    const distance = levenshtein(a, b);
+    return distance <= 2; /* allow small mistakes */
+  }
+
+  function nextWord() {
+    current = wordsData[Math.floor(Math.random() * wordsData.length)];
+    /* Mark this word as seen */
+    seen.add(current.en);
+
+    if (mode === "en_to_cn") {
+      document.getElementById("word").textContent = current.en;
+    } else {
+      document.getElementById("word").textContent = current.cn;
+    }
+
+    document.getElementById("answer").value = "";
+    document.getElementById("result").textContent = "";
+    document.getElementById("answer").focus();
+
+    updateStats();
+  }
+
+  function checkAnswer() {
+    const user = document.getElementById("answer").value.trim();
+    const correct = mode === "en_to_cn" ? current.cn : current.en;
+
+    attempts++;
+
+    if (isFuzzyMatch(user, correct)) {
+        correctCount++;
+      document.getElementById("result").textContent = "Correct!";
+    } else {
+      document.getElementById("result").textContent =
+        "Not quite. Correct answer: " + correct;
+    }
+
+    updateStats();
+    /* setTimeout(nextWord, 1000); */
+  }
+
+  document.getElementById("toggle").addEventListener("click", () => {
+    mode = mode === "en_to_cn" ? "cn_to_en" : "en_to_cn";
+    document.getElementById("toggle").textContent =
+      mode === "en_to_cn"
+        ? "Switch to Chinese → English"
+        : "Switch to English → Chinese";
+    nextWord();
+  });
+
+  function updateStats() { 
+    document.getElementById("coverage").textContent = `Coverage: ${seen.size} / ${totalWords}`; 
+    /* alert(correctCount + " | seen: " + seen.size); */
+    const rate = seen.size === 0 ? "Accuracy: --" : `Accuracy: ${Math.round((correctCount / seen.size) * 100)}%`; 
+    document.getElementById("accuracy").textContent = rate; 
+}
+
+    document.addEventListener("keydown", function (e) {
+    /* Ctrl + <  (Ctrl + Shift + ,) */
+    if (e.ctrlKey && e.shiftKey && e.key === ",") {
+        e.preventDefault();
+        checkAnswer();
+    }
+
+    /* Ctrl + >  (Ctrl + Shift + .) */
+    if (e.ctrlKey && e.shiftKey && e.key === ".") {
+        e.preventDefault();
+        nextWord();
+    }
+    });
+
+
+</script>

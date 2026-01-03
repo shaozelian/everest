@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+<h1>Word Practice</h1>
+
+<div id="quiz">
+  <div id="word"></div>
+  <span id="count">0</span>
+  <input id="answer" placeholder="Type your answer">
+  <button onclick="checkAnswer()">Check</button>
+  <div id="result"></div>
+</div>
+
+<script>
+  // Convert Jekyll data into a JS array
+  const words = [
+    {% for day in site.data.words.days %}
+      {% for w in day.words %}
+        { en: "{{ w.en }}", cn: "{{ w.cn }}" },
+      {% endfor %}
+    {% endfor %}
+  ];
+
+  let count = words.length;
+    document.getElementById("count").textContent = count;
+
+  let current = null;
+
+  function nextWord() {
+    current = words[Math.floor(Math.random() * words.length)];
+    document.getElementById("word").textContent = current.en;
+    document.getElementById("answer").value = "";
+    document.getElementById("result").textContent = "";
+  }
+
+  function checkAnswer() {
+    const user = document.getElementById("answer").value.trim();
+    const correct = current.cn;
+
+    if (user === correct) {
+      document.getElementById("result").textContent = "Correct!";
+    } else {
+      document.getElementById("result").textContent =
+        "Not quite. Correct answer: " + correct;
+    }
+
+    setTimeout(nextWord, 1000);
+  }
+
+  nextWord();
+</script>
